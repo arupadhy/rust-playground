@@ -1,3 +1,8 @@
 .vscode
 .vimrc
 target
+
+
+# Added by cargo
+
+/target
