@@ -1,3 +1,19 @@
+// basics, strongly typed + memory management handled
+// primitive types
+/*
+  i8, i16, i32, i64
+  u8...
+
+  char (unicode)
+  bool
+
+  // compound types
+  slice
+  array
+  enum
+  struct
+
+*/
 // enum can hold some data as well
 
 enum Clock {
@@ -156,7 +172,7 @@ fn move_position(&mut self, seconds_remaining: u8) {
 }
 player.shoot_puck(10);
 
-// create new Player and try shotting puck again
+// create new Player and try shooting puck again
 let new_player = Player {
     name: String::from("New player"),
     number: 50,
