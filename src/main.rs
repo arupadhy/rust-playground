@@ -1,3 +1,5 @@
+mod ownership;
+mod borrow;
 // basics, strongly typed + memory management handled
 // primitive types
 /*
@@ -187,7 +189,39 @@ new_player.shoot_puck(80);
 
   // calling mutating method
   third_player.move_position(20);
+
+// basic owenership example
+  // using primitive type here
+  let data = 100;
+  let x = data;
+  
+  // using string here
+  let mut input = String::from("hello");
+  // this line transfers ownership of "hello" to other
+  // uncommenting this lint would lead to error
+  //  let other = input;
+  //  println!("input now is {}", input);
+
+  // call to this function will change the owner
+  // ownership::say(input); 
+
+  let mut plural_value = ownership::pluralize(input.clone());
+  println!("Original value is {} and plural value is {}", input, plural_value);
+
+  // ownderhip
+  borrow::use_person_to_understand_ownership();
+  
 }
+
+/*
+  Rust concept of ownership
+  one variable has one owner and owner is responsible for cleaning up memory used by that variable
+  once owner goes out of scope, all variable that it owns are gone as well
+*/
+
+
+
+
 
 fn tell_time(clock: Clock) {
   // here match can be used along with destructuring
