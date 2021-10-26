@@ -1,5 +1,6 @@
 mod ownership;
 mod borrow;
+mod slice;
 // basics, strongly typed + memory management handled
 // primitive types
 /*
@@ -211,6 +212,8 @@ new_player.shoot_puck(80);
   // ownderhip
   borrow::use_person_to_understand_ownership();
   
+  // slices
+  slice::create_slice(); 
 }
 
 /*
